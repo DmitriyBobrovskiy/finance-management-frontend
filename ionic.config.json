@@ -1,5 +1,7 @@
 {
   "name": "finance-management-mobile",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

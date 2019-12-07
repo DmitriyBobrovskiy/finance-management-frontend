@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Transactions
     </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="sync()">
+        <ion-icon slot="icon-only" name="sync"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <div *ngFor="let transaction of transactions">
+    {{transaction.id}}
+    {{transaction.category.title}}
+    {{transaction.amount}}
+  </div>
+</ion-content>

@@ -13,8 +13,40 @@
 
 <ion-content>
   <div *ngFor="let transaction of transactions">
-    {{transaction.id}}
-    {{transaction.category.title}}
-    {{transaction.amount}}
+    <ion-grid class="ion-no-padding ion-no-margin">
+      <ion-row>
+        <ion-col size="2" class="ion-no-padding">
+          <ion-icon size="large" name="tennisball"></ion-icon>
+        </ion-col>
+        <ion-col class="ion-no-padding ion-no-margin">
+          <ion-row class="ion-no-padding ion-no-margin">
+            <ion-col size="8">
+              <ion-text>
+                <h4>{{transaction.category.title}}</h4>
+              </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>
+                <h4>{{transaction.amount}}</h4>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-no-padding ion-no-margin">
+            <ion-col>
+              <ion-text color="medium">
+                <h6>{{transaction.account.title}}</h6>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-no-padding ion-no-margin">
+            <ion-col>
+              <ion-text color="medium">
+                <h6>{{transaction.counterpart.title}}</h6>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

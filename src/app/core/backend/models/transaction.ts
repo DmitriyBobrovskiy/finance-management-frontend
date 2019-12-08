@@ -2,6 +2,7 @@ import { Counterpart } from './counterpart';
 import { TransactionType } from './transaction-type';
 import { Category } from './category';
 import { LoanType } from './loan-type';
+import { Account } from './account';
 
 export class Transaction {
     id: number;

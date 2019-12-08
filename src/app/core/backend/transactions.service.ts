@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 import { Transaction } from './models/transaction';
 
@@ -10,15 +10,22 @@ import { Transaction } from './models/transaction';
 })
 
 export abstract class Transactions {
-  abstract get(): Observable<Transaction[]>;
+  transactions: Observable<Transaction[]>;
+
+  abstract get();
 }
 
 export class TransactionsService implements Transactions {
+  private transactionsStream = new BehaviorSubject(null);
+  get transactions() { return this.transactionsStream.asObservable(); }
 
   constructor(private httpClient: HttpClient) { }
 
-  get(): Observable<Transaction[]> {
-    return this.httpClient
-      .get<Transaction[]>('http://192.168.0.106:63732/api/transactions');
+  get() {
+    this.httpClient
+      .get<Transaction[]>('http://192.168.0.106:63732/api/transactions')
+      .subscribe(transactions => {
+        this.transactionsStream.next(transactions);
+      });
   }
 }

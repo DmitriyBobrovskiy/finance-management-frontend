@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Transactions } from 'src/app/core/backend/transactions.service';
-import { Transaction } from 'src/app/core/backend/models/transaction';
+import { TransactionStore } from 'src/app/core/transaction-store';
+import { State } from 'src/app/core/state';
 
 @Component({
   selector: 'app-transactions',
@@ -8,16 +8,13 @@ import { Transaction } from 'src/app/core/backend/models/transaction';
   styleUrls: ['transactions.page.scss']
 })
 export class TransactionsPage implements OnInit {
-  transactions: Transaction[] = [];
-
-  constructor(private transactionsService: Transactions) { }
+  State = State;
+  constructor(public store: TransactionStore) { }
 
   ngOnInit() {
-    this.transactionsService.transactions
-      .subscribe(transactions => this.transactions = transactions);
   }
 
-  sync = () => {
-    this.transactionsService.get();
+  fetch = () => {
+    this.store.fetch();
   }
 }

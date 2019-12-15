@@ -4,8 +4,8 @@
       Transactions
     </ion-title>
     <ion-buttons slot="primary">
-      <ion-button (click)="sync()">
-        <ion-icon slot="icon-only" name="sync"></ion-icon>
+      <ion-button (click)="fetch()">
+        <i class="fas fa-sync-alt fa-2x" [ngClass]="{'fa-spin': store.state == State.Fetching}"></i>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -13,7 +13,7 @@
 
 <ion-content>
   <div class="container">
-    <div class="row mx-n3 my-3 px-0" *ngFor="let transaction of transactions">
+    <div class="row mx-n3 my-3 px-0" *ngFor="let transaction of store.transactions">
       <div class="col-2">
         <i class="far fa-angry fa-3x"></i>
       </div>

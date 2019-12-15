@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Transactions, TransactionsService } from './core/backend/transactions.service';
+import { TransactionStore } from './core/transaction-store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +26,7 @@ import { Transactions, TransactionsService } from './core/backend/transactions.s
     HttpClient,
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: Transactions, useClass: TransactionsService }
+    TransactionStore,
   ],
   bootstrap: [AppComponent]
 })

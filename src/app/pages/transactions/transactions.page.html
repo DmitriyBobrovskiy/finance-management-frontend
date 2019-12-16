@@ -47,4 +47,9 @@
       </div>
     </div>
   </div>
+  <float-button icon="fas fa-plus" (events)="output($event)" [open]="open" direction="{{direction}}" color="{{color}}">
+    <float-item-button icon="fas fa-user-plus" content="float item 1"></float-item-button>
+    <float-item-button icon="fas fa-map-marker-alt" content="float item 2"></float-item-button>
+    <float-item-button icon="fas fa-pencil-alt" content="float item 3"></float-item-button>
+  </float-button>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionStore } from 'src/app/core/transaction-store';
 import { State } from 'src/app/core/state';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-transactions',
@@ -9,6 +10,10 @@ import { State } from 'src/app/core/state';
 })
 export class TransactionsPage implements OnInit {
   State = State;
+  color = 'red';
+  direction = 'bottom';
+  open: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
   constructor(public store: TransactionStore) { }
 
   ngOnInit() {
@@ -16,5 +21,9 @@ export class TransactionsPage implements OnInit {
 
   fetch = () => {
     this.store.fetch();
+  }
+
+  output(log) {
+    console.log(log);
   }
 }

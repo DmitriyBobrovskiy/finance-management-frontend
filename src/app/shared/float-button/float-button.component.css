@@ -1,5 +1,7 @@
 :host {
-    position: absolute;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
   }
 
   .fab-menu {

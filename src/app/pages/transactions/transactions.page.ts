@@ -11,7 +11,7 @@ import { BehaviorSubject } from 'rxjs';
 export class TransactionsPage implements OnInit {
   State = State;
   color = 'red';
-  direction = 'bottom';
+  direction = 'top';
   open: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(public store: TransactionStore) { }

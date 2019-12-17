@@ -7,23 +7,15 @@ import { Component, Input, Output, EventEmitter, ViewChild, ChangeDetectionStrat
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FloatItemButtonComponent {
-  @Input()
-  icon: string;
-  @Input()
-  content: string;
-  @Input()
-  color = 'white';
-  @Input()
-  disabled = false;
+  @Input() icon: string;
+  @Input() content: string;
+  @Input() color = 'white';
+  @Input() disabled = false;
 
-  @Output()
-  clicked: EventEmitter<any> = new EventEmitter();
+  @Output() clicked: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild('elementref', { static: false })
-  elementref;
-
-  @ViewChild('contentref', { static: false })
-  contentref;
+  @ViewChild('elementref', { static: false }) elementref;
+  @ViewChild('contentref', { static: false }) contentref;
 
   emitClickEvent($event: Event) {
     if (this.disabled) {

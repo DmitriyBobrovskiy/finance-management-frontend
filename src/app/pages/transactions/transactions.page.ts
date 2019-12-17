@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TransactionStore } from 'src/app/core/transaction-store';
 import { State } from 'src/app/core/state';
 import { BehaviorSubject } from 'rxjs';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-transactions',
@@ -14,7 +15,10 @@ export class TransactionsPage implements OnInit {
   direction = 'top';
   open: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(public store: TransactionStore) { }
+  constructor(
+    public store: TransactionStore,
+    private navigation: NavController
+  ) { }
 
   ngOnInit() {
   }
@@ -23,7 +27,7 @@ export class TransactionsPage implements OnInit {
     this.store.fetch();
   }
 
-  output(log) {
-    console.log(log);
+  clicked = () => {
+    this.navigation.navigateForward('transaction');
   }
 }

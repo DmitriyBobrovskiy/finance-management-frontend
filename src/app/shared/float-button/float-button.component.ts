@@ -24,22 +24,14 @@ import { FloatItemButtonComponent } from './float-item-button.component';
 export class FloatButtonComponent implements AfterViewInit, OnDestroy, OnChanges {
   public state: BehaviorSubject<any>;
 
-  @Input()
-  icon: string;
-  @Input()
-  direction: string;
-  @Input()
-  spaceBetweenButtons = 55;
-  @Input()
-  open: Subject<boolean>;
-  @Input()
-  color = '#dd0031';
-  @Input()
-  disabled = false;
-  @Output()
-  events: Subject<any> = new Subject();
-  @ContentChildren(FloatItemButtonComponent)
-  buttons;
+  @Input() icon: string;
+  @Input() direction: string;
+  @Input() spaceBetweenButtons = 55;
+  @Input() open: Subject<boolean>;
+  @Input() color = '#dd0031';
+  @Input() disabled = false;
+  @Output() events: Subject<any> = new Subject();
+  @ContentChildren(FloatItemButtonComponent) buttons;
 
   private _destroy$ = new Subject();
 
@@ -85,7 +77,7 @@ export class FloatButtonComponent implements AfterViewInit, OnDestroy, OnChanges
       const style = btn.elementref.nativeElement.style;
 
       if (eventType !== 'directionChanged' && this.state.getValue().display) {
-        style['transform'] = 'scale(1)';
+        style.transform = 'scale(1)';
         style['transition-duration'] = '0s';
 
         if (btn.timeout) {
@@ -95,12 +87,12 @@ export class FloatButtonComponent implements AfterViewInit, OnDestroy, OnChanges
 
       setTimeout(() => {
         style['transition-duration'] = this.state.getValue().display ? `${90 + 100 * i}ms` : '';
-        style['transform'] = this.state.getValue().display ? this.getTranslate(i) : '';
+        style.transform = this.state.getValue().display ? this.getTranslate(i) : '';
       }, 50);
 
       if (eventType !== 'directionChanged' && !this.state.getValue().display) {
         btn.timeout = setTimeout(() => {
-          style['transform'] = 'scale(0)';
+          style.transform = 'scale(0)';
         }, 90 + 100 * i);
       }
     });

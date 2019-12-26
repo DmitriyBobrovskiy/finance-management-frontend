@@ -1,13 +1,12 @@
 import { Counterpart } from './counterpart';
-import { TransactionType } from './transaction-type';
+import { TransactionType, getTransactionTypeInfo } from './transaction-type';
 import { Category } from './category';
 import { LoanType } from './loan-type';
 import { Account } from './account';
 
 export class Transaction {
     id: number;
-    transactionTypeId: number;
-    transactionType: TransactionType;
+    transactionTypeId: TransactionType;
     date: Date;
     amount: number;
     counterpartId: number;
@@ -19,4 +18,8 @@ export class Transaction {
     description: string;
     loanTypeId: number;
     loanType: LoanType;
+
+    transactionTypeInfo = () => {
+        return getTransactionTypeInfo(this.transactionTypeId);
+    }
 }

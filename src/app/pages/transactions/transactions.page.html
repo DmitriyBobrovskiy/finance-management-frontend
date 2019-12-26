@@ -5,7 +5,8 @@
     </ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="fetch()">
-        <i class="fas fa-sync-alt fa-2x" [ngClass]="{'fa-spin': store.state == State.Fetching}"></i>
+        <i class="fas fa-sync-alt fa-2x" 
+        [ngClass]="{'fa-spin': transactionStore.state == State.Fetching}"></i>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -13,7 +14,9 @@
 
 <ion-content>
   <div class="container">
-    <div class="row mx-n3 my-3 px-0" *ngFor="let transaction of store.transactions">
+    <div class="row mx-n3 my-3 px-0" 
+      *ngFor="let transaction of transactionStore.transactions"
+      (click)="edit(transaction)">
       <div class="col-2">
         <i class="far fa-angry fa-3x"></i>
       </div>
@@ -47,9 +50,29 @@
       </div>
     </div>
   </div>
-  <float-button icon="fas fa-plus" [open]="open" direction="{{direction}}" color="{{color}}">
-    <float-item-button icon="fas fa-user-plus" (clicked)="clicked()" content="clicked"></float-item-button>
-    <float-item-button icon="fas fa-map-marker-alt" content="float item 2"></float-item-button>
-    <float-item-button icon="fas fa-pencil-alt" content="float item 3"></float-item-button>
+  <float-button 
+    icon="fas fa-plus" 
+    [open]="open" 
+    direction="{{direction}}" 
+    color="{{color}}">
+    <ng-template #floatButton let-transactionType='transactionType'>
+      <float-item-button icon="{{ transactionTypeInfo(transactionType).icon }}"
+        (clicked)="edit({transactionTypeId: transactionType})"
+        content="{{ transactionTypeInfo(transactionType).title }}">
+      </float-item-button>
+    </ng-template>
+
+    <ng-container [ngTemplateOutlet]="floatButton"
+      [ngTemplateOutletContext]="{transactionType:TransactionType.Expense}">
+    </ng-container>
+    <ng-container [ngTemplateOutlet]="floatButton" 
+      [ngTemplateOutletContext]="{transactionType:TransactionType.Income}">
+    </ng-container>
+    <ng-container [ngTemplateOutlet]="floatButton"
+      [ngTemplateOutletContext]="{transactionType:TransactionType.Transfer}">
+    </ng-container>
+    <ng-container [ngTemplateOutlet]="floatButton" 
+      [ngTemplateOutletContext]="{transactionType:TransactionType.Debt}">
+    </ng-container>
   </float-button>
 </ion-content>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { Routing } from 'src/app/routing';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../transactions/transactions.module').then(m => m.TransactionsPageModule)
+              import('../transactions/transactions.module')
+                .then(m => m.TransactionsPageModule)
           }
         ]
       },
@@ -45,7 +47,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'transaction',
+    path: Routing.Transaction,
     children: [
       {
         path: '',

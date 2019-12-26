@@ -18,8 +18,4 @@ export class Transaction {
     description: string;
     loanTypeId: number;
     loanType: LoanType;
-
-    transactionTypeInfo = () => {
-        return getTransactionTypeInfo(this.transactionTypeId);
-    }
 }

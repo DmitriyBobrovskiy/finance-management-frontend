@@ -18,7 +18,6 @@ export class TransactionStore {
 
     @action fetch() {
         this.state = State.Fetching;
-        console.log(this.configuration.paths.transactions);
         this.httpClient
             .get<Transaction[]>(this.configuration.paths.transactions)
             .subscribe(transactions => {

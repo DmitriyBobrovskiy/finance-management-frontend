@@ -1,12 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>transaction</ion-title>
+    <ion-title>{{ transactionTypeInfo.title }}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="delete()">
+        <i class="fas fa-trash fa-2x"></i>
+      </ion-button>
+      <ion-button (click)="save()">
+        <i class="fas fa-save fa-2x"></i>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  This is transaction page!
+  <div class="container">
+    <div class="row border-bottom">
+      {{transaction.amount}}
+    </div>
+    <div class="row border-bottom">
+      <i class="{{transaction.category.icon.tag}} fa-3x"></i>
+    </div>
+    <div class="row border-bottom">
+      {{transaction.account.title}}
+    </div>
+    <div class="row border-bottom">
+      {{transaction.date}}
+    </div>
+    <div class="row border-bottom">
+      {{transaction.counterpart.title}}
+    </div>
+    <div class="row border-bottom">
+      {{transaction.description}}
+    </div>
+  </div>
 </ion-content>

@@ -18,7 +18,7 @@
       *ngFor="let transaction of transactionStore.transactions"
       (click)="edit(transaction)">
       <div class="col-2">
-        <i class="far fa-angry fa-3x"></i>
+        <i class="{{transaction.category.icon.tag}} fa-3x"></i>
       </div>
       <div class="col">
         <div class="row">

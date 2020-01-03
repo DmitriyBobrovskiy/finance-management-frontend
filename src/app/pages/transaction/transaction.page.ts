@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Transaction } from 'src/app/core/backend/models/transaction';
 import { Router } from '@angular/router';
+
+import { Transaction } from 'src/app/core/backend/models/transaction';
 import { getTransactionTypeInfo } from 'src/app/core/backend/models/transaction-type';
+import { TransactionStore } from 'src/app/core/transaction-store';
 
 @Component({
   selector: 'app-transaction',
@@ -12,13 +14,15 @@ export class TransactionPage implements OnInit {
   transaction: Transaction;
 
   constructor(
-    private router: Router) {
+    private router: Router,
+    public transactionStore: TransactionStore) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.transaction = this.router.getCurrentNavigation().extras.state.transaction;
     }
   }
 
   ngOnInit() {
+    this.transaction = this.transactionStore.transactions[0];
   }
 
   save = () => {

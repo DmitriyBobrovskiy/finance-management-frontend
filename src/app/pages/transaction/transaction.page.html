@@ -18,22 +18,56 @@
 <ion-content>
   <div class="container">
     <div class="row border-bottom">
-      {{transaction.amount}}
+      <div class="input-group input-group-lg">
+        <input type="number" class="form-control text-right" placeholder="0"
+          [(ngModel)]="transaction.amount">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            {{ transaction.account.currency.symbol }}
+          </span>
+        </div>
+      </div>
     </div>
-    <div class="row border-bottom">
-      <i class="{{transaction.category.icon.tag}} fa-3x"></i>
+    <div class="row border-bottom py-2">
+      <div class="col-2">
+        <i class="{{transaction.category.icon.tag}} fa-3x"></i>
+      </div>
+      <div class="col d-flex align-items-center">
+        {{ transaction.category.title }}
+      </div>
     </div>
-    <div class="row border-bottom">
-      {{transaction.account.title}}
+    <div class="row border-bottom py-2">
+      <div class="col-1">
+        <i class="fas fa-wallet"></i>
+      </div>
+      <div class="col">
+        {{transaction.account.title}}
+      </div>
     </div>
-    <div class="row border-bottom">
-      {{transaction.date}}
+    <div class="row border-bottom py-2">
+      <div class="col-1">
+        <i class="fas fa-calendar-day"></i>
+      </div>
+      <div class="col">
+        {{transaction.date | date:'longDate'}}
+      </div>
     </div>
-    <div class="row border-bottom">
-      {{transaction.counterpart.title}}
+    <div class="row border-bottom py-2">
+      <div class="col-1">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div class="col">
+        {{transaction.counterpart.title}}
+      </div>
     </div>
-    <div class="row border-bottom">
-      {{transaction.description}}
+    <div class="row border-bottom py-2">
+      <div class="col-1 d-flex align-items-center">
+        <i class="fas fa-comment"></i>
+      </div>
+      <div class="col input-group">
+        <input type="text" class="form-control border-0 p-0"
+          placeholder="Comment" [(ngModel)]="transaction.description">
+      </div>
     </div>
   </div>
 </ion-content>

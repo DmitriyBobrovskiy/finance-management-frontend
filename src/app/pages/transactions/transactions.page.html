@@ -5,8 +5,11 @@
     </ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="fetch()">
-        <i class="fas fa-sync-alt fa-2x" 
-        [ngClass]="{'fa-spin': transactionStore.state == State.Fetching}"></i>
+        <i class="fas fa-sync-alt fa-2x" [ngClass]="{
+            'fa-spin': transactionStore.state == State.Fetching,
+            'text-danger': transactionStore.state == State.Error
+          }">
+        </i>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -14,7 +17,7 @@
 
 <ion-content>
   <div class="container">
-    <div class="row mx-n3 my-3 px-0" 
+    <div class="row mx-n3 my-3 px-0"
       *ngFor="let transaction of transactionStore.transactions"
       (click)="edit(transaction)">
       <div class="col-2">
@@ -50,10 +53,7 @@
       </div>
     </div>
   </div>
-  <float-button 
-    icon="fas fa-plus" 
-    [open]="open" 
-    direction="{{direction}}" 
+  <float-button icon="fas fa-plus" [open]="open" direction="{{direction}}"
     color="{{color}}">
     <ng-template #floatButton let-transactionType='transactionType'>
       <float-item-button icon="{{ transactionTypeInfo(transactionType).icon }}"
@@ -65,13 +65,13 @@
     <ng-container [ngTemplateOutlet]="floatButton"
       [ngTemplateOutletContext]="{transactionType:TransactionType.Expense}">
     </ng-container>
-    <ng-container [ngTemplateOutlet]="floatButton" 
+    <ng-container [ngTemplateOutlet]="floatButton"
       [ngTemplateOutletContext]="{transactionType:TransactionType.Income}">
     </ng-container>
     <ng-container [ngTemplateOutlet]="floatButton"
       [ngTemplateOutletContext]="{transactionType:TransactionType.Transfer}">
     </ng-container>
-    <ng-container [ngTemplateOutlet]="floatButton" 
+    <ng-container [ngTemplateOutlet]="floatButton"
       [ngTemplateOutletContext]="{transactionType:TransactionType.Debt}">
     </ng-container>
   </float-button>

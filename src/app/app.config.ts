@@ -7,7 +7,12 @@ export class Paths {
     transactionTypes = `${this.server}api/transactionTypes`;
 }
 
+export class Timeouts {
+    loading = 10000;
+}
+
 @Injectable()
 export class Configuration {
     paths = new Paths();
+    timeouts = new Timeouts();
 }

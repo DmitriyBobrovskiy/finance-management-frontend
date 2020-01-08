@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ transactionTypeInfo.title }}</ion-title>
+    <ion-title (click)="toggleTransactionType()">
+      {{ getTransactionTypeInfo(transaction.transactionTypeId).title }}
+      <i class="fas fa-sort-down"></i>
+    </ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -17,6 +20,28 @@
 
 <ion-content>
   <div class="container">
+    <div class="row border-bottom" *ngIf="showTransactionTypes">
+      <ng-container [ngTemplateOutlet]="transactionType"
+        [ngTemplateOutletContext]="{transactionType:TransactionType.Expense}">
+      </ng-container>
+      <ng-container [ngTemplateOutlet]="transactionType"
+        [ngTemplateOutletContext]="{transactionType:TransactionType.Income}">
+      </ng-container>
+      <ng-container [ngTemplateOutlet]="transactionType"
+        [ngTemplateOutletContext]="{transactionType:TransactionType.Transfer}">
+      </ng-container>
+      <ng-container [ngTemplateOutlet]="transactionType"
+        [ngTemplateOutletContext]="{transactionType:TransactionType.Debt}">
+      </ng-container>
+
+      <ng-template #transactionType let-transactionType='transactionType'>
+        <div class="col border-primary p-3 text-center"
+          [ngClass]="{'border-bottom': transaction.transactionTypeId === transactionType}"
+          (click)="chooseTransactionType(transactionType)">
+          {{getTransactionTypeInfo(transactionType).title}}
+        </div>
+      </ng-template>
+    </div>
     <div class="row border-bottom">
       <div class="input-group input-group-lg">
         <input type="number"
@@ -32,7 +57,7 @@
     <div class="row border-bottom py-2">
       <div class="col">
         <div class="row" (click)="toggleCategories()">
-          <div class="col-2">
+          <div class="col-2 mr-1">
             <i class="{{transaction.category.icon.tag}} fa-3x"></i>
           </div>
           <div class="col d-flex align-items-center">

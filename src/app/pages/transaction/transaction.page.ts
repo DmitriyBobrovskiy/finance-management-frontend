@@ -6,7 +6,10 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { TypeaheadMatch } from 'ngx-bootstrap';
 
 import { Transaction } from 'src/app/core/backend/models/transaction';
-import { getTransactionTypeInfo } from 'src/app/core/backend/models/transaction-type';
+import {
+  getTransactionTypeInfo,
+  TransactionType
+} from 'src/app/core/backend/models/transaction-type';
 import { TransactionStore } from 'src/app/core/transaction-store';
 import { CategoryStore } from 'src/app/core/category-store';
 import { Category } from 'src/app/core/backend/models/category';
@@ -22,9 +25,12 @@ import { Counterpart } from 'src/app/core/backend/models/counterpart';
   styleUrls: ['./transaction.page.scss'],
 })
 export class TransactionPage implements OnInit {
+  TransactionType = TransactionType;
+
   modalRef: BsModalRef;
   transaction: Transaction;
   showCategories = false;
+  showTransactionTypes = false;
   selected: string;
 
   constructor(
@@ -51,6 +57,15 @@ export class TransactionPage implements OnInit {
 
   delete = () => {
     console.log('deleting transaction...');
+  }
+
+  toggleTransactionType = () => {
+    this.showTransactionTypes = !this.showTransactionTypes;
+  }
+
+  chooseTransactionType = (transactionType: TransactionType) => {
+    this.transaction.transactionTypeId = transactionType;
+    this.toggleTransactionType();
   }
 
   toggleCategories = () => {
@@ -94,8 +109,8 @@ export class TransactionPage implements OnInit {
     this.transaction.counterpartId = counterpart.id;
   }
 
-  get transactionTypeInfo() {
-    return getTransactionTypeInfo(this.transaction.transactionTypeId);
+  getTransactionTypeInfo(transactionType: TransactionType) {
+    return getTransactionTypeInfo(transactionType);
   }
 
   get counterparts() {

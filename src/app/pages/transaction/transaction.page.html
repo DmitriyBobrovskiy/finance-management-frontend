@@ -19,32 +19,50 @@
   <div class="container">
     <div class="row border-bottom">
       <div class="input-group input-group-lg">
-        <input type="number" class="form-control text-right" placeholder="0"
+        <input type="number"
+          class="form-control shadow-none border-0 text-right" placeholder="0"
           [(ngModel)]="transaction.amount">
         <div class="input-group-append">
-          <span class="input-group-text">
+          <span class="input-group-text border-0">
             {{ transaction.account.currency.symbol }}
           </span>
         </div>
       </div>
     </div>
     <div class="row border-bottom py-2">
-      <div class="col-2">
-        <i class="{{transaction.category.icon.tag}} fa-3x"></i>
-      </div>
-      <div class="col d-flex align-items-center">
-        {{ transaction.category.title }}
+      <div class="col">
+        <div class="row" (click)="toggleCategories()">
+          <div class="col-2">
+            <i class="{{transaction.category.icon.tag}} fa-3x"></i>
+          </div>
+          <div class="col d-flex align-items-center">
+            {{ transaction.category.title }}
+          </div>
+        </div>
+        <!-- TODO: add option for creating new category -->
+        <ng-container *ngIf="showCategories">
+          <div class="row py-1"
+            *ngFor="let category of categoryStore.categories"
+            (click)="chooseCategory(category)">
+            <div class="col-1">
+              <i class="{{category.icon.tag}}"></i>
+            </div>
+            <div class="col">
+              {{ category.title }}
+            </div>
+          </div>
+        </ng-container>
       </div>
     </div>
-    <div class="row border-bottom py-2">
-      <div class="col-1">
+    <div class="row border-bottom py-2" (click)="openModal(accounts)">
+      <div class=" col-1">
         <i class="fas fa-wallet"></i>
       </div>
       <div class="col">
         {{transaction.account.title}}
       </div>
     </div>
-    <div class="row border-bottom py-2">
+    <div class="row border-bottom py-2" (click)="openDateChooser()">
       <div class="col-1">
         <i class="fas fa-calendar-day"></i>
       </div>
@@ -52,7 +70,7 @@
         {{transaction.date | date:'longDate'}}
       </div>
     </div>
-    <div class="row border-bottom py-2">
+    <div class="row border-bottom py-2" (click)="openModal(counterpart)">
       <div class="col-1">
         <i class="fas fa-map-marker-alt"></i>
       </div>
@@ -65,9 +83,43 @@
         <i class="fas fa-comment"></i>
       </div>
       <div class="col input-group">
-        <input type="text" class="form-control border-0 p-0"
+        <input type="text" class="form-control border-0 p-0 shadow-none"
           placeholder="Comment" [(ngModel)]="transaction.description">
       </div>
     </div>
   </div>
+
+  <ng-template #accounts>
+    <div class="modal-body">
+      <div class="container">
+        <div class="row" *ngFor="let account of accountStore.accounts">
+          <div class="col py-1" (click)="chooseAccount(account)">
+            <h5>{{ account.title }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #counterpart>
+    <div class="modal-body">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+        </div>
+
+        <input type="text" class="form-control shadow-none"
+          [(ngModel)]="transaction.counterpart.title"
+          [typeahead]="counterpartStore.counterparts"
+          (typeaheadOnSelect)="onSelectCounterpart($event)"
+          typeaheadOptionField="title">
+
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button"
+            (click)="closeModal()">Ok</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </ion-content>

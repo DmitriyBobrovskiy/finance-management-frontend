@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import { TypeaheadModule } from 'ngx-bootstrap';
 
 import { TransactionPage } from './transaction.page';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([{ path: '', component: TransactionPage }])
+    RouterModule.forChild([{ path: '', component: TransactionPage }]),
+    TypeaheadModule,
   ],
   declarations: [TransactionPage]
 })

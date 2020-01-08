@@ -5,6 +5,9 @@ export class Paths {
 
     transactions = `${this.server}api/transactions`;
     transactionTypes = `${this.server}api/transactionTypes`;
+    categories = `${this.server}api/categories`;
+    accounts = `${this.server}api/accounts`;
+    counterparts = `${this.server}api/counterparts`;
 }
 
 export class Timeouts {

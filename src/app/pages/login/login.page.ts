@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationStore } from 'src/app/core/authentication-store';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,22 @@ import { AuthenticationStore } from 'src/app/core/authentication-store';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private authenticationStore: AuthenticationStore) { }
+  form: FormGroup = null;
+  constructor(
+    private authenticationStore: AuthenticationStore,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      email: [''],
+      password: ['']
+    });
   }
 
   login = () => {
-    this.authenticationStore.authenticate(null, null);
+    const values = this.form.value;
+
+    this.authenticationStore.authenticate(values.email, values.password);
+    // TODO: form is not resetting after authentication
   }
 }

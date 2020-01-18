@@ -30,35 +30,34 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'analytics',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../analytics/analytics.module').then(m => m.AnalyticsPageModule)
+          }
+        ]
+      },
+      {
+        path: 'menu',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../menu/menu.module').then(m => m.MenuPageModule)
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/transactions',
+        redirectTo: Routing.Transactions,
         pathMatch: 'full'
       },
     ]
   },
   {
-    path: Routing.Transaction,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('../transaction/transaction.module').then(m => m.TransactionPageModule)
-      }
-    ]
-  },
-  {
     path: '',
-    redirectTo: '/tabs/transactions',
+    redirectTo: Routing.Transactions,
     pathMatch: 'full'
   },
 ];

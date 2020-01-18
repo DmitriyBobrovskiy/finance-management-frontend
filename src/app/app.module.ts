@@ -18,6 +18,7 @@ import { Configuration } from './app.config';
 import { CategoryStore } from './core/category-store';
 import { AccountStore } from './core/account-store';
 import { CounterpartStore } from './core/counterpart-store';
+import { AuthenticationStore } from './core/authentication-store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,10 +42,11 @@ import { CounterpartStore } from './core/counterpart-store';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Configuration,
 
+    AuthenticationStore,
     TransactionStore,
     CategoryStore,
     AccountStore,
-    CounterpartStore
+    CounterpartStore,
   ],
   bootstrap: [AppComponent]
 })

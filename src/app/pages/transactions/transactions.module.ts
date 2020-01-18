@@ -15,9 +15,6 @@ import { FloatButtonModule } from 'src/app/shared/float-button/float-button.modu
     RouterModule.forChild([{ path: '', component: TransactionsPage }]),
     FloatButtonModule,
   ],
-  declarations: [
-    TransactionsPage,
-
-  ]
+  declarations: [TransactionsPage]
 })
 export class TransactionsPageModule { }

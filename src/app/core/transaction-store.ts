@@ -70,4 +70,8 @@ export class TransactionStore {
                     console.error(error);
                 });
     }
+
+    @action add(transaction: Transaction) {
+
+    }
 }

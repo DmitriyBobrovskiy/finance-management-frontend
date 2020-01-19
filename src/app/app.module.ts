@@ -19,6 +19,8 @@ import { CategoryStore } from './core/category-store';
 import { AccountStore } from './core/account-store';
 import { CounterpartStore } from './core/counterpart-store';
 import { AuthenticationStore } from './core/authentication-store';
+import { UserStore } from './core/user-store';
+import { PredictionStore } from './core/prediction-store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,11 +44,13 @@ import { AuthenticationStore } from './core/authentication-store';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Configuration,
 
-    AuthenticationStore,
-    TransactionStore,
-    CategoryStore,
     AccountStore,
+    AuthenticationStore,
+    CategoryStore,
     CounterpartStore,
+    TransactionStore,
+    PredictionStore,
+    UserStore,
   ],
   bootstrap: [AppComponent]
 })

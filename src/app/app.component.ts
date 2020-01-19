@@ -8,6 +8,7 @@ import { Routing } from './routing';
 import { AuthenticationStore } from './core/authentication-store';
 import { State } from './core/state';
 import { toObservable } from './shared/utilities';
+import { Configuration } from './app.config';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
-    private authenticationStore: AuthenticationStore
+    private authenticationStore: AuthenticationStore,
+    private configuration: Configuration
   ) {
     this.initializeApp();
     this.verifyAuthentication();
@@ -34,6 +36,9 @@ export class AppComponent {
   }
 
   verifyAuthentication = () => {
+    if (!this.configuration.verifyAuth) {
+      return;
+    }
     toObservable(() => this.authenticationStore.state).subscribe(state => {
       if (state === State.SignedOff) {
         this.router.navigate([Routing.Login]);

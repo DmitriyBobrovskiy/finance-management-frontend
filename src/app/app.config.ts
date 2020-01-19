@@ -18,4 +18,6 @@ export class Timeouts {
 export class Configuration {
     paths = new Paths();
     timeouts = new Timeouts();
+
+    verifyAuth = false;
 }

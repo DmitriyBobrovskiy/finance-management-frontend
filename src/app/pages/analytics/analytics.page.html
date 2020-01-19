@@ -1,11 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
+    <ion-title i18n>Analytics</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="card-group">
+    <div class="card">
+      <div class="card-header" i18n>
+        Future spends
+      </div>
+      <div class="card-body">
+        <label i18n>Months to analyze</label>
+        <ion-range min="1" max="12" pin="true" snaps="true" debounce="500"
+          [(ngModel)]="monthsToAnalyze" (ionChange)="rangesChanges()">
+        </ion-range>
 
+        <label i18n>Days to predict</label>
+        <ion-range min="1" max="7" pin="true" snaps="true" ticks="true"
+          debounce="500" [(ngModel)]="daysToPredict"
+          (ionChange)="rangesChanges()">
+        </ion-range>
+
+        <span i18n>Most likely you will spend</span>
+        <span class="h5">
+          {{ predictionStore.futureSpends | number: '1.0-2' }}{{ userStore.mainCurrency }}
+        </span>
+      </div>
+    </div>
+  </div>
 </ion-content>

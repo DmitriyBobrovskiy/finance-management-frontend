@@ -17,6 +17,10 @@
           <context context-type="sourcefile">src/app/pages/tabs/tabs.page.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/transactions/transactions.page.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="efbe55685ffef5af777f95b5b512f2c8b15cbfcc" datatype="html">
         <source>Analytics</source>
@@ -24,6 +28,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tabs/tabs.page.html</context>
           <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/analytics/analytics.page.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ac0f81713a84217c9bd1d9bb460245d8190b073f" datatype="html">
@@ -34,14 +42,40 @@
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="834175a25691eb86aa4687872f1c527fb2c1b8c8" datatype="html">
-        <source>Transactions</source>
-        <target>Операции</target>
+
+      <trans-unit id="48e9de947c90d547b7cdc07b937e6e2eba604bdb" datatype="html">
+        <source>Future spends</source>
+        <target>Будущие траты</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/transactions/transactions.page.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="sourcefile">src/app/pages/analytics/analytics.page.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1a6255bc6e14855a7f7ba426614b1f3f3ed44ccb" datatype="html">
+        <source>Months to analyze</source>
+        <target>Количество месяцев для анализа</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/analytics/analytics.page.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="18ff8ada3d3709a3397ba764a7c29f08d09229f1" datatype="html">
+        <source>Days to predict</source>
+        <target>Количество дней для прогноза</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/analytics/analytics.page.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b4fa8244481889f044a3b582ab90d4872fc07332" datatype="html">
+        <source>Most likely you will spend</source>
+        <target>Скорее всего вы потратите</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/analytics/analytics.page.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+
       <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
         <source>Email</source>
         <target>Электронная почта</target>
@@ -66,6 +100,7 @@
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
+
       <trans-unit id="83f783e0e962ad0134329b028c9ee42b7ae7cc22" datatype="html">
         <source>Expense</source>
         <target>Расход</target>

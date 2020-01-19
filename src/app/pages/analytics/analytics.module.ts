@@ -10,7 +10,7 @@ import { AnalyticsPage } from './analytics.page';
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: AnalyticsPage }])
+    RouterModule.forChild([{ path: '', component: AnalyticsPage }]),
   ],
   declarations: [AnalyticsPage]
 })

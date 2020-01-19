@@ -1,12 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { UserStore } from 'src/app/core/user-store';
+import { PredictionStore } from 'src/app/core/prediction-store';
 
 @Component({
   selector: 'app-analytics',
   templateUrl: 'analytics.page.html',
   styleUrls: ['analytics.page.scss']
 })
-export class AnalyticsPage {
+export class AnalyticsPage implements OnInit {
+  monthsToAnalyze = 1;
+  daysToPredict = 1;
 
-  constructor() { }
+  constructor(
+    public userStore: UserStore,
+    public predictionStore: PredictionStore
+  ) { }
 
+  ngOnInit() {
+    this.rangesChanges();
+  }
+
+  rangesChanges = () => {
+    this.predictionStore.predict(this.monthsToAnalyze, this.daysToPredict);
+  }
 }

@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>menu</ion-title>
+    <ion-title>{{ userStore.user.email }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()">
+        <i class="fas fa-sign-out-alt fa-2x"></i>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <button class="btn btn-primary" (click)="logout()">Logout</button>
+
 </ion-content>

@@ -9,12 +9,12 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'accounts',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../accounts/accounts.module').then(m => m.AccountsPageModule)
           }
         ]
       },

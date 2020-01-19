@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title i18n>Accounts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-item *ngFor="let item of accountStore.accounts">
+      <ion-icon slot="start" name="wallet"></ion-icon>
+      <ion-label>{{item.title}}</ion-label>
+      <ion-label text-right position="fixed">{{item.currency.symbol}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -8,6 +8,10 @@
           <context context-type="sourcefile">src/app/pages/tabs/tabs.page.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/accounts/accounts.page.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="add4cd82e3e38a3110fe67b3c7df56e9602644ee" datatype="html">
         <source>Transactions</source>
@@ -66,6 +70,41 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/analytics/analytics.page.html</context>
           <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="04201f9d27abd7d6f58a4328ab98063ce1072006" datatype="html">
+        <source>Categories</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/menu/menu.page.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f1de1e255d78946cd5cbf87e0f6cc3c8565591e" datatype="html">
+        <source>Counterparts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/menu/menu.page.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d559dfc07a7d0cc02ed5a80f3c0bcdb762b33bd8" datatype="html">
+        <source>Family access</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/menu/menu.page.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
+        <source>Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/menu/menu.page.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="85b79c9064aed1ead31ace985f31aa1363f6bdaf" datatype="html">
+        <source>Help</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/menu/menu.page.html</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">

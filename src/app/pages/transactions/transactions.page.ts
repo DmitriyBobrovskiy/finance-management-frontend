@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, LOCALE_ID } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs';
 import { cloneDeep } from 'lodash';
@@ -29,7 +29,8 @@ export class TransactionsPage implements OnInit {
 
   constructor(
     public transactionStore: TransactionStore,
-    private router: Router
+    private router: Router,
+    @Inject(LOCALE_ID) private locale: string
   ) { }
 
   ngOnInit() {
@@ -39,13 +40,13 @@ export class TransactionsPage implements OnInit {
     this.transactionStore.fetch();
   }
 
-  edit = (transaction: Transaction) => {
+  edit = (transaction: Partial<Transaction>) => {
     this.router.navigate(
       [Routing.Transaction],
       { state: { transaction: cloneDeep(transaction) } });
   }
 
   transactionTypeInfo = (transactionType: TransactionType) => {
-    return getTransactionTypeInfo(transactionType);
+    return getTransactionTypeInfo(transactionType, this.locale);
   }
 }

@@ -69,6 +69,14 @@
             },
             "ci": {
               "progress": false
+            },
+            "ru": {
+              "aot": true,
+              "outputPath": "www/ru",
+              "i18nFile": "src/locales/messages.ru.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ru",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -80,6 +88,9 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },
+            "ru": {
+              "browserTarget": "app:build:ru"
             },
             "ci": {
               "progress": false
@@ -159,6 +170,9 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },
+            "ru": {
+              "browserTarget": "app:build:ru"
             }
           }
         },
@@ -172,6 +186,10 @@
             "production": {
               "cordovaBuildTarget": "app:ionic-cordova-build:production",
               "devServerTarget": "app:serve:production"
+            },
+            "ru": {
+              "cordovaBuildTarget": "app:ionic-cordova-build:ru",
+              "devServerTarget": "app:serve:ru"
             }
           }
         }

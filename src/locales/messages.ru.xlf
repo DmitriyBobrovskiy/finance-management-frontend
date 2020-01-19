@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4fe84c1d0eef5726c017f64c691145db7a61f879" datatype="html">
+        <source>Accounts</source>
+        <target>Аккаунты</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tabs/tabs.page.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add4cd82e3e38a3110fe67b3c7df56e9602644ee" datatype="html">
+        <source>Transactions</source>
+        <target>Операции</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tabs/tabs.page.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="efbe55685ffef5af777f95b5b512f2c8b15cbfcc" datatype="html">
+        <source>Analytics</source>
+        <target>Аналитика</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tabs/tabs.page.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac0f81713a84217c9bd1d9bb460245d8190b073f" datatype="html">
+        <source>More</source>
+        <target>Меню</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tabs/tabs.page.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="834175a25691eb86aa4687872f1c527fb2c1b8c8" datatype="html">
+        <source>Transactions</source>
+        <target>Операции</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/transactions/transactions.page.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <target>Электронная почта</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.page.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
+        <source>Password</source>
+        <target>Пароль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.page.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
+        <source>Login</source>
+        <target>Вход</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/login/login.page.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="83f783e0e962ad0134329b028c9ee42b7ae7cc22" datatype="html">
+        <source>Expense</source>
+        <target>Расход</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/transaction/transaction.page.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b6583d9a7ffb33287fff33e76583e454774abee0" datatype="html">
+        <source>Income</source>
+        <target>Доход</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/transaction/transaction.page.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="798f7720c371eda6d7931bc590b771a02e2881bb" datatype="html">
+        <source>Transfer</source>
+        <target>Перевод</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/transaction/transaction.page.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3e4b62d6eb511c7a58a414e76a4b2ca79bf485d2" datatype="html">
+        <source>Debt</source>
+        <target>Долг</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/transaction/transaction.page.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5a5d7ee2acbfa9c91ab7f41d26bda9ff0cafe42f" datatype="html">
+        <source>Comment</source>
+        <target>Описание</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/transaction/transaction.page.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

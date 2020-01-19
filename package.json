@@ -6,11 +6,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ionic serve",
+    "start:ru": "ionic serve --configuration=ru",
     "mobile": "ionic serve --devapp",
+    "mobile:ru": "ionic serve --devapp --configuration=ru",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "int:extract": "ng xi18n --output-path src/locales"
   },
   "private": true,
   "dependencies": {

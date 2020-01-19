@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, Inject, LOCALE_ID } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
@@ -40,7 +40,8 @@ export class TransactionPage implements OnInit {
     public accountStore: AccountStore,
     public counterpartStore: CounterpartStore,
     private modalService: BsModalService,
-    private datePicker: DatePicker) {
+    private datePicker: DatePicker,
+    @Inject(LOCALE_ID) private locale: string) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.transaction = this.router.getCurrentNavigation().extras.state.transaction;
     }
@@ -110,7 +111,7 @@ export class TransactionPage implements OnInit {
   }
 
   getTransactionTypeInfo(transactionType: TransactionType) {
-    return getTransactionTypeInfo(transactionType);
+    return getTransactionTypeInfo(transactionType, this.locale);
   }
 
   get counterparts() {

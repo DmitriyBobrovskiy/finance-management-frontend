@@ -13,7 +13,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "int:extract": "ng xi18n --output-path src/locales"
+    "int:extract": "ng xi18n --output-path src/locales",
+    "release": "ionic cordova build --release android"
   },
   "private": true,
   "dependencies": {

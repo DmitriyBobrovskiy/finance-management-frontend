@@ -17,6 +17,7 @@ import { AccountStore } from 'src/app/core/account-store';
 import { Account } from 'src/app/core/backend/models/account';
 import { CounterpartStore } from 'src/app/core/counterpart-store';
 import { Counterpart } from 'src/app/core/backend/models/counterpart';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -35,6 +36,7 @@ export class TransactionPage implements OnInit {
 
   constructor(
     private router: Router,
+    private location: Location,
     public transactionStore: TransactionStore,
     public categoryStore: CategoryStore,
     public accountStore: AccountStore,
@@ -53,11 +55,12 @@ export class TransactionPage implements OnInit {
 
   save = () => {
     console.log('saving transaction...');
-    console.log(this.transaction.amount);
+    this.location.back();
   }
 
   delete = () => {
     console.log('deleting transaction...');
+    this.location.back();
   }
 
   toggleTransactionType = () => {

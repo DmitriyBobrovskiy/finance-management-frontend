@@ -37,8 +37,8 @@ export class TransactionStore {
                 },
                 currency: {
                     id: 3,
-                    title: 'Евро',
-                    symbol: '€'
+                    title: 'Рубли',
+                    symbol: '₽'
                 }
             },
             categoryId: 2,
@@ -46,7 +46,7 @@ export class TransactionStore {
                 id: 2,
                 title: 'Свободные',
                 icon: {
-                    tag: 'fas fa-check'
+                    tag: 'fas fa-money-bill-wave'
                 }
             },
             description: null,

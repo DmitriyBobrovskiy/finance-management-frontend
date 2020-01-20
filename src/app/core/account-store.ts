@@ -94,7 +94,8 @@ export class AccountStore {
                 }
             },
         ];
-        this.fetch();
+        // TODO: for debug reasons
+        //this.fetch();
     }
 
     @action fetch() {

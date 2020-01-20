@@ -24,7 +24,7 @@
 
         <span i18n>Most likely you will spend</span>
         <span class="h5">
-          {{ predictionStore.futureSpends | number: '1.0-2' }}{{ userStore.user.mainCurrency }}
+          {{ predictionStore.futureSpends | number: '1.0-2' }}{{ userStore.user.mainCurrency.symbol }}
         </span>
       </div>
     </div>

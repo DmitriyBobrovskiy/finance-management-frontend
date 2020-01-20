@@ -15,16 +15,20 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.form = this.formBuilder.group({
-      email: [''],
-      password: ['']
-    });
+    this.resetForm();
   }
 
   login = () => {
     const values = this.form.value;
 
     this.authenticationStore.authenticate(values.email, values.password);
-    // TODO: form is not resetting after authentication
+    this.resetForm();
+  }
+
+  resetForm = () => {
+    this.form = this.formBuilder.group({
+      email: [''],
+      password: ['']
+    });
   }
 }

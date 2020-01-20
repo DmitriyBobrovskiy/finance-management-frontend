@@ -14,7 +14,52 @@ export class CategoryStore {
     constructor(
         private httpClient: HttpClient,
         private configuration: Configuration) {
-        this.fetch();
+        // TODO: for debug reasons only
+        this.categories = [
+            {
+                id: 1,
+                title: 'Животные',
+                icon: {
+                    tag: 'fas fa-dog'
+                }
+            },
+            {
+                id: 2,
+                title: 'Свободные',
+                icon: {
+                    tag: 'fas fa-money-bill-wave'
+                }
+            },
+            {
+                id: 3,
+                title: 'Продукты',
+                icon: {
+                    tag: 'fas fa-shopping-basket'
+                }
+            },
+            {
+                id: 4,
+                title: 'Здоровье',
+                icon: {
+                    tag: 'fas fa-medkit'
+                }
+            },
+            {
+                id: 5,
+                title: 'Дети',
+                icon: {
+                    tag: 'fas fa-child'
+                }
+            },
+            {
+                id: 6,
+                title: 'Автомобиль',
+                icon: {
+                    tag: 'fas fa-car'
+                }
+            }
+        ];
+        // this.fetch();
     }
 
     @action fetch() {

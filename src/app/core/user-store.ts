@@ -17,7 +17,7 @@ export class UserStore {
     public getTestUser() {
         return {
             mainCurrency: {
-                symbol: '$',
+                symbol: '₽', // $
                 title: '',
                 id: 0
             },
